@@ -12,9 +12,6 @@ class MeteorLists {
   void fall(){
     s = s + g;
     y = y + s;
-    if (y > height) {
-    y = height;
-    }
   }
     void display() {
     fill(0);
