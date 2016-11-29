@@ -14,6 +14,13 @@ void setup(){
   myfont = createFont("Tahoma Bold",16); 
 }
 
+//void drawMap(){
+//  for(c = 0; c < 400; c+=10){
+//  ellipseMode(RADIUS);
+//  ellipse(width/2,height/2,c,random(c,400));
+//  }
+//}
+
 void drawTime(){
   fill(65,105,225);
   //String time = nf(hour(),2) + ":" + nf(minute(),2) + ":" + nf(second(),2);
