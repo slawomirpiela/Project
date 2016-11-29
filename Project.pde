@@ -85,10 +85,24 @@ void draw() {
   drawTime();
   drawBackground();
   drawWaves();
+  
+    //loop to get the meteors to display & fall
+  for (int i = meteors.size()-1; i >= 0; i--) { 
+    MeteorLists meteor = meteors.get(i);
+    strokeWeight(1);
+    meteor.fall();
+    meteor.display();
+  } 
+  //if statement to create new "meteors" when pressing mouse button
+  if(mousePressed){
+    meteors.add(new MeteorLists(mouseX,mouseY,random(30,50),random(25,40)));
+}
+  
   option1.draw();
   option2.draw();
   option3.draw();
   option4.draw();
+  
   //displaying these strings
   String inst = ("Press 1 for planet Uno, 2 for Dos");
   fill(65,105,225);
@@ -98,14 +112,4 @@ void draw() {
   textFont(myfont,12);
   fill(65,105,225);
   text(inst2,580, 50);
-  //loop to get the meteors to display & fall
-  for (int i = meteors.size()-1; i >= 0; i--) { 
-    MeteorLists meteor = meteors.get(i);
-    meteor.fall();
-    meteor.display();
-  } 
-  //if statement to create new "meteors" when pressing mouse button
-  if(mousePressed){
-    meteors.add(new MeteorLists(mouseX,mouseY,random(30,50),random(25,40)));
-}
 }

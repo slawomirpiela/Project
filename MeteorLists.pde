@@ -1,15 +1,17 @@
+//creating class meteorlists
 class MeteorLists {
-  float x,y,s,w,h,a;
+  float x,y,w,h;
 //Constructor
   MeteorLists(float mouseX, float mouseY,float tempw, float temph) {
     x = mouseX;
     y = mouseY;
     w = tempw;
     h = temph;
-    s = 5;
   }
+  //methods of this class: fall & display
   void fall(){
-    y = y + s;
+    //adds
+    y = y + 5;
   }
     void display() {
     stroke(0);
