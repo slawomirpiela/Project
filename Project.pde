@@ -26,6 +26,7 @@ void drawTime(){
   fill(65,105,225);
   //String time = nf(hour(),2) + ":" + nf(minute(),2) + ":" + nf(second(),2);
   String time = ("Time ''Lines'' ");
+  textFont(myfont,18);
   text(time,50, 100);
   noFill();
   strokeWeight(5);
@@ -74,12 +75,12 @@ void draw() {
   background(0);
   drawTime();
   drawBackground();
-    drawWaves();
+  drawWaves();
   option1.draw();
   option2.draw();
   option3.draw();
   option4.draw();
-
   String inst = ("Press 1 for planet Uno, 2 for Dos");
-  text(inst,width/2, 40);
+  textFont(myfont,12);
+  text(inst,580, 20);
 }
