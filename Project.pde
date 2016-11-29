@@ -5,6 +5,7 @@ float pi;
 float[] graph1 = {70,80,120,80,90,120,80,20,150},graph2 = {90,60,50,100,50,160,120,110,30};
 float[] graph3 = {150,20,30,70,90,110,90,90,20},graph4 = {160,60,50,100,30,70,50,120,140};
 
+
 void setup(){
   size(800,800,P2D);
   option1 = new Option(50,480, "WATER", graph1);
@@ -12,7 +13,6 @@ void setup(){
   option3 = new Option(50,360, "OZONE", graph3);
   option4 = new Option(50,300, "RADIATION", graph4);
   myfont = createFont("Tahoma Bold",16); 
-  loadData();
 }
 
 //void drawMap(){
@@ -21,14 +21,6 @@ void setup(){
 //  ellipse(width/2,height/2,c,random(c,400));
 //  }
 //}
-
-void loadData(){
-  Table table = loadTable("stars.csv","header");
-  for(TableRow row:table.rows())
-  {
-    Star star
-  }
-}
 
 void drawTime(){
   fill(65,105,225);
@@ -67,6 +59,7 @@ void drawWaves(){
       text(arcs,490,240);
     }
   stroke(65,140,random(100,225));
+  pushMatrix();
   translate(width/2+width*1/5, height/2);
 
   for(int r=10; r<150; r=r+10) {
@@ -74,15 +67,19 @@ void drawWaves(){
     strokeWeight(r/30);
     arc(0, 0, r, r, 0, pi);
   }
+  popMatrix();
 }
 
 void draw() {
   background(0);
   drawTime();
   drawBackground();
+    drawWaves();
   option1.draw();
   option2.draw();
   option3.draw();
   option4.draw();
-  drawWaves();
+
+  String inst = ("Press 1 for planet Uno, 2 for Dos");
+  text(inst,width/2, 40);
 }
