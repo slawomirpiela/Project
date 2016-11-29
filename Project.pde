@@ -1,5 +1,6 @@
 int c;
 PFont myfont;
+float pi;
 
 void setup(){
   size(800,800,P2D);
@@ -31,8 +32,30 @@ void drawBackground(){
   }
 }
 
+void drawWaves(){
+  noFill();
+  String arcs = ("''Sound'' Arcs");
+    if (key == '1') {
+      pi = 3.15;
+      text(arcs,490,240);
+    }
+    if (key == '2') {
+      pi = 3.14;
+      text(arcs,490,240);
+    }
+  stroke(65,140,random(100,225));
+  translate(width/2+width*1/5, height/2);
+
+  for(int r=10; r<150; r=r+10) {
+    rotate(second());
+    strokeWeight(r/30);
+    arc(0, 0, r, r, 0, pi);
+  }
+}
+
 void draw() {
   background(0);
   drawTime();
-  drawBackground(); 
+  drawBackground();
+  drawWaves();
 }
