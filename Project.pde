@@ -4,7 +4,7 @@ PFont myfont;
 float pi;
 float[] graph1 = {70,80,120,80,90,120,80,20,150},graph2 = {90,60,50,100,50,160,120,110,30};
 float[] graph3 = {150,20,30,70,90,110,90,90,20},graph4 = {160,60,50,100,30,70,50,120,140};
-ArrayList<MeteorLists> stars; 
+ArrayList<MeteorLists> meteors; 
 
 void setup(){
   size(800,800,P2D);
@@ -13,6 +13,8 @@ void setup(){
   option3 = new Option(50,360, "OZONE", graph3);
   option4 = new Option(50,300, "RADIATION", graph4);
   myfont = createFont("Tahoma Bold",16); 
+  meteors = new ArrayList<MeteorLists>();
+  meteors.add(new MeteorLists(width/2, 0));
 }
 
 //void drawMap(){
@@ -83,4 +85,15 @@ void draw() {
   String inst = ("Press 1 for planet Uno, 2 for Dos");
   textFont(myfont,12);
   text(inst,580, 20);
+  String inst2 = ("Press a mouse button for magic");
+  textFont(myfont,12);
+  text(inst,580, 50);
+  for (int i = meteors.size()-1; i >= 0; i--) { 
+    MeteorLists meteor = meteors.get(i);
+    meteor.fall();
+    meteor.display();
+  } 
+  if(mousePressed){
+    meteors.add(new MeteorLists(mouseX,mouseY));
+}
 }
