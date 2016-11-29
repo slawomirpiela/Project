@@ -1,3 +1,4 @@
+Option option1,option2,option3,option4;
 int c;
 PFont myfont;
 float pi;
@@ -6,6 +7,10 @@ float[] graph3 = {150,20,30,70,90,110,90,90,20},graph4 = {160,60,50,100,30,70,50
 
 void setup(){
   size(800,800,P2D);
+  option1 = new Option(50,480, "WATER", graph1);
+  option2 = new Option(50,420, "OXYGEN", graph2);
+  option3 = new Option(50,360, "OZONE", graph3);
+  option4 = new Option(50,300, "RADIATION", graph4);
   myfont = createFont("Tahoma Bold",16); 
 }
 
