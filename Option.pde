@@ -2,6 +2,7 @@ class Option {
 int x1,y1,x2,y2;
 float[]graph;
 String s;
+int linex1;
 
 // The Constructor is defined with arguments.
 Option(int tempx1,int tempy1, String temptext, float[] temparray){
@@ -33,6 +34,19 @@ void draw() {
         text(graph[i],i*lineWidth+5,graph[i]-20);
         }
     popMatrix();   
+  }
+  strokeWeight(6);
+  rect(x1,y1,180,50);
+  pushMatrix();
+  translate(x1,y1);
+  fill(65,105,225);
+  textFont(myfont,20);
+  text(s,10,30);
+  popMatrix();
+  for(linex1 = x1+8; linex1 < 230; linex1+=20){
+    //strokeWeight(6);
+    stroke(65,105,225,40);
+    line(linex1,y1,linex1-5,y2);
   }
 }
 }
