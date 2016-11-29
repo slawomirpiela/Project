@@ -12,6 +12,7 @@ void setup(){
   option3 = new Option(50,360, "OZONE", graph3);
   option4 = new Option(50,300, "RADIATION", graph4);
   myfont = createFont("Tahoma Bold",16); 
+  loadData();
 }
 
 //void drawMap(){
@@ -20,6 +21,14 @@ void setup(){
 //  ellipse(width/2,height/2,c,random(c,400));
 //  }
 //}
+
+void loadData(){
+  Table table = loadTable("stars.csv","header");
+  for(TableRow row:table.rows())
+  {
+    Star star
+  }
+}
 
 void drawTime(){
   fill(65,105,225);
