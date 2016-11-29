@@ -84,12 +84,10 @@ void draw() {
   background(0);
   drawTime();
   drawBackground();
-  drawWaves();
-  
     //loop to get the meteors to display & fall
   for (int i = meteors.size()-1; i >= 0; i--) { 
     MeteorLists meteor = meteors.get(i);
-    strokeWeight(1);
+    strokeWeight(3);
     meteor.fall();
     meteor.display();
   } 
@@ -97,7 +95,7 @@ void draw() {
   if(mousePressed){
     meteors.add(new MeteorLists(mouseX,mouseY,random(30,50),random(25,40)));
 }
-  
+  drawWaves(); 
   option1.draw();
   option2.draw();
   option3.draw();
