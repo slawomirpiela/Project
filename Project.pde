@@ -7,14 +7,14 @@ float[] graph3 = {150,20,30,70,90,110,90,90,20},graph4 = {160,60,50,100,30,70,50
 ArrayList<MeteorLists> meteors; 
 
 void setup(){
-  size(800,800,P2D);
+  size(800,800);
   option1 = new Option(50,480, "WATER", graph1);
   option2 = new Option(50,420, "OXYGEN", graph2);
   option3 = new Option(50,360, "OZONE", graph3);
   option4 = new Option(50,300, "RADIATION", graph4);
   myfont = createFont("Tahoma Bold",16); 
   meteors = new ArrayList<MeteorLists>();
-  meteors.add(new MeteorLists(width/2, 0, 15,15));
+  meteors.add(new MeteorLists(width/2, height/2, 0,0));
 }
 
 //void drawMap(){
@@ -83,10 +83,12 @@ void draw() {
   option3.draw();
   option4.draw();
   String inst = ("Press 1 for planet Uno, 2 for Dos");
+  fill(65,105,225);
   textFont(myfont,12);
   text(inst,580, 20);
   String inst2 = ("Press a mouse button for magic");
   textFont(myfont,12);
+  fill(65,105,225);
   text(inst2,580, 50);
   for (int i = meteors.size()-1; i >= 0; i--) { 
     MeteorLists meteor = meteors.get(i);
@@ -94,6 +96,6 @@ void draw() {
     meteor.display();
   } 
   if(mousePressed){
-    meteors.add(new MeteorLists(mouseX,mouseY,random(50,80),random(0,80)));
+    meteors.add(new MeteorLists(mouseX,mouseY,random(30,50),random(25,40)));
 }
 }

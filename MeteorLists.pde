@@ -1,20 +1,19 @@
 class MeteorLists {
-  float x,y,s,g,w,h,a;
+  float x,y,s,w,h,a;
 //Constructor
   MeteorLists(float mouseX, float mouseY,float tempw, float temph) {
     x = mouseX;
     y = mouseY;
     w = tempw;
     h = temph;
-    s = 0;
-    g = 0.1;
+    s = 5;
   }
   void fall(){
-    s = s + g;
     y = y + s;
   }
     void display() {
-    fill(0);
+    stroke(0);
+    noFill();
     ellipse(x,y,w,h);
   }
 }
