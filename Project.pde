@@ -71,5 +71,9 @@ void draw() {
   background(0);
   drawTime();
   drawBackground();
+  option1.draw();
+  option2.draw();
+  option3.draw();
+  option4.draw();
   drawWaves();
 }
