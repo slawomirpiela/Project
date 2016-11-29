@@ -1,10 +1,10 @@
 
-class StarMap
+class Star
 {
   String name;
   float xpos, ypos, size;
   
-  StarMap(TableRow row){
+  Star(TableRow row){
     name = row.getString("Name");
     xpos = row.getFloat("X");
     ypos = row.getFloat("Y");
