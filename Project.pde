@@ -14,7 +14,7 @@ void setup(){
   option4 = new Option(50,300, "RADIATION", graph4);
   myfont = createFont("Tahoma Bold",16); 
   meteors = new ArrayList<MeteorLists>();
-  meteors.add(new MeteorLists(width/2, 0));
+  meteors.add(new MeteorLists(width/2, 0, 15,15));
 }
 
 //void drawMap(){
@@ -87,13 +87,13 @@ void draw() {
   text(inst,580, 20);
   String inst2 = ("Press a mouse button for magic");
   textFont(myfont,12);
-  text(inst,580, 50);
+  text(inst2,580, 50);
   for (int i = meteors.size()-1; i >= 0; i--) { 
     MeteorLists meteor = meteors.get(i);
     meteor.fall();
     meteor.display();
   } 
   if(mousePressed){
-    meteors.add(new MeteorLists(mouseX,mouseY));
+    meteors.add(new MeteorLists(mouseX,mouseY,random(50,80),random(0,80)));
 }
 }
