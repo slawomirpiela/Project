@@ -61,12 +61,12 @@ void drawWaves(){
       pi = 3.14;
       text(arcs,490,240);
     }
-  stroke(65,140,random(100,225));
+  stroke(65,140,random(200,225));
   pushMatrix();
   translate(width/2+width*1/5, height/2);
 
   for(int r=10; r<150; r=r+10) {
-    rotate(second());
+    rotate(millis()/1000.);
     strokeWeight(r/30);
     arc(0, 0, r, r, 0, pi);
   }
